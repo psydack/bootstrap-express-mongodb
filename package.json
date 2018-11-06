@@ -1,0 +1,29 @@
+{
+  "name": "bootstrap-express-mongodb",
+  "version": "1.0.0",
+  "description": "bootstrap with crud for mongodb and express server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psydack/bootstrap-express-mongodb.git"
+  },
+  "keywords": [
+    "express",
+    "server",
+    "mongodb"
+  ],
+  "author": "Rofli Sanches",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/psydack/bootstrap-express-mongodb/issues"
+  },
+  "homepage": "https://github.com/psydack/bootstrap-express-mongodb#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.9"
+  }
+}
