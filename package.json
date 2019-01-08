@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-express-mongodb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "bootstrap with crud for mongodb and express server",
   "main": "index.js",
   "scripts": {
