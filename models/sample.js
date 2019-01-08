@@ -3,8 +3,7 @@ const mongoose = require("mongoose");
 const SampleSchema = new mongoose.Schema({
   title: {
     type: String,
-    // default: ""
-    required: [true, 'Insira um titulo.'],
+    required: [true, "Insert a title"]
   },
   distributionDate: {
     type: Date,

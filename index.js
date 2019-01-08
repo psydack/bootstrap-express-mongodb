@@ -1,13 +1,17 @@
-const cors = require("cors");
+// Default
+// ===============================================================
+// do not need this, but normally used
+// const cors = require("cors");
+// our server
 const express = require("express");
+// our database
 const mongoose = require("mongoose");
+// our port
 // const isDev = process.env.NODE_ENV !== 'production';
 const port = process.env.PORT || 4000;
 
-// Configuration
-// ================================================================================================
-
-// Set up Mongoose
+// MONGOOSE
+// ===============================================================
 mongoose.connect(
   // 'mongodb://localhost:27017/can_be_this',
   "mongodb+srv://bd-name:pass@mbd-url/table?retryWrites=true",
@@ -15,26 +19,24 @@ mongoose.connect(
 );
 mongoose.Promise = global.Promise;
 
+// EXPRESS SERVER
+// ===============================================================
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
+// if using cors see line 4
+// app.use(cors());
 
-// DELAY FOR TEST LATENCY
-// console.trace(
-//     '****************** NAO ESQUECER DE REMOVER LATENCIA ****************',
-// );
-// app.use((req, res, next) => {
-//     setTimeout(next, Math.random() * 3000);
-// });
-
-// API routes
+// ROUTES
+// ===============================================================
 require("./routes/sample")(app);
-
+// index route
 app.get("", (req, res) => {
   res.json("Bem vindo");
 });
 
+// START
+// ===============================================================
 app.listen(port, err => {
   if (err) {
     console.log(err);
@@ -43,4 +45,6 @@ app.listen(port, err => {
   console.info(">>> 🌎 Open http://localhost:%s/api/ in your browser.", port);
 });
 
+// END
+// ===============================================================
 module.exports = app;
